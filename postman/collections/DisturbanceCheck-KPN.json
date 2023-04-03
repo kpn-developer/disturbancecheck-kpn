@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "2b6fa6a7-083d-4c4f-b0bd-1086de8d215c",
+		"name": "DisturbanceCheck-KPN",
+		"description": "This API allows you to check the disturbance of the internet and the technology at an address. The API takes the postcode, house number and house extension, sends the request to the backend to retrieve real time information about the internet and technology service at the address.\n### Key highlights\n- **Sandbox:** Full-fledged capabilities.\n- **Security:**  HTTPS, OAuth, Rate limit.\n- **Versioning:**  Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version. \n---\n## [KPN API Store](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4406147-2b6fa6a7-083d-4c4f-b0bd-1086de8d215c"
+	},
+	"item": [
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "get info",
+					"id": "7479374d-f325-4693-b647-b8793e12e83d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "API Version. If no version is provided it defaults to latest version.",
+								"key": "api-version",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address"
+							],
+							"query": [
+								{
+									"key": "zip_code",
+									"value": "{{zip_code}}",
+									"description": "(Required) Zip code of the address. Format `1111AR`."
+								},
+								{
+									"key": "house_number",
+									"value": "{{house_number}}",
+									"description": "(Required) House number of the address."
+								},
+								{
+									"key": "house_number_extension",
+									"value": "{{house_number_extension}}",
+									"description": "House number extension of the address."
+								}
+							]
+						},
+						"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+					},
+					"response": [
+						{
+							"id": "9818e384-0d49-4876-9065-922e266516d5",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"broadband\": [\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    }\n  ],\n  \"fixed\": [\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    }\n  ],\n  \"mobile\": [\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    }\n  ],\n  \"generic\": [\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"affected_elements_count\": \"<integer>\",\n      \"affected_customers_count\": \"<integer>\",\n      \"communicated_customers_sms_count\": \"<integer>\",\n      \"communicated_customers_email_count\": \"<integer>\",\n      \"type\": \"<string>\",\n      \"cause\": \"<string>\",\n      \"source\": \"<string>\",\n      \"service\": \"<string>\",\n      \"state\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"region\": \"<string>\",\n      \"description\": \"<string>\",\n      \"long_description\": \"<string>\",\n      \"serviceguard_ticket_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"communication_type\": \"<string>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+						},
+						{
+							"id": "8c9ff717-01c6-4e39-8392-bd695e1bb018",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "ac641731-3f28-4236-9c01-0a2fd346698a",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "60b48295-23d6-4c99-bfa4-f62c56530414",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "1ae80825-4755-4b02-aa8b-fbad1d6fca46",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "7d9b51e0-7db7-48c6-bd5b-4395448803b2",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "b541d192-06a3-4de3-989e-fccfa3b4bb7d",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "8705ff8c-24b3-4b02-bcca-b3334cd804bb",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"type": "any"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"type": "any"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "API Version. If no version is provided it defaults to latest version.",
+										"key": "api-version",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address?zip_code={{zip_code}}&house_number={{house_number}}&house_number_extension={{house_number_extension}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "{{zip_code}}",
+											"description": "(Required) Zip code of the address. Format `1111AR`."
+										},
+										{
+											"key": "house_number",
+											"value": "{{house_number}}",
+											"description": "(Required) House number of the address."
+										},
+										{
+											"key": "house_number_extension",
+											"value": "{{house_number_extension}}",
+											"description": "House number extension of the address."
+										}
+									]
+								},
+								"description": "Retrieves the information about internet connection and technology for the given address identified by postcode, house number and house extension."
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "0d74d5d5-be7c-46c1-9a2d-771972c68635"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9aa5a3aa-9e36-47b8-9c9c-fa7bd2979e01",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c66aca99-5f34-4534-bf1c-b177ebd4a46c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2fe2a80c-badf-4c12-9b03-f7d492ac8699",
+			"key": "baseUrl",
+			"value": "https://api-prd.kpn.com/network/kpn/disturbance-check"
+		},
+		{
+			"id": "531c7b4f-7edb-40fe-afef-c811212f13d3",
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "43caf1c5-b6ac-487c-87af-37b36d97e6bb",
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8e695454-c45e-40f1-95d0-47f6a2122272",
+			"key": "zip_code",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "1563a86d-09f7-4f02-ac58-8b84b48abd7c",
+			"key": "house_number",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "d07f6b5b-eeba-4ec6-adaa-8559bdc5b6fb",
+			"key": "house_number_extension",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
