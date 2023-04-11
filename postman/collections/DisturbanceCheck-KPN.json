@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "2b6fa6a7-083d-4c4f-b0bd-1086de8d215c",
 		"name": "DisturbanceCheck-KPN",
-		"description": "This API allows you to check the disturbance of the internet and the technology at an address. The API takes the postcode, house number and house extension, sends the request to the backend to retrieve real time information about the internet and technology service at the address.\n### Key highlights\n- **Sandbox:** Full-fledged capabilities.\n- **Security:**  HTTPS, OAuth, Rate limit.\n- **Versioning:**  Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version. \n---\n## [KPN API Store](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"description": "This API allows you to check the disturbance of the internet and the technology at an address. The API takes the postcode, house number and house extension, sends the request to the backend to retrieve real time information about the internet and technology service at the address.\n\n### Key highlights\n\n- **Sandbox:** Full-fledged capabilities.\n- **Security:** HTTPS, OAuth, Rate limit.\n- **Versioning:** Supports version-less API, version tight. If no version is provided (in header) it defaults to latest version.\n    \n\n---\n\n## [KPN Developer](https://developer.kpn.com/)\n\n[Getting Started](https://developer.kpn.com/getting-started)\n\n---\n\nContact Support:  \nName: API Support  \nEmail: [api_developer@kpn.com](mailto:api_developer@kpn.com)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "4406147-2b6fa6a7-083d-4c4f-b0bd-1086de8d215c"
 	},
