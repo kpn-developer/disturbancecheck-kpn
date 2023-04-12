@@ -1068,6 +1068,11 @@
 		"type": "oauth2",
 		"oauth2": [
 			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
 				"key": "clientSecret",
 				"value": "{{client_secret}}",
 				"type": "string"
@@ -1106,11 +1111,6 @@
 				"key": "addTokenTo",
 				"value": "header",
 				"type": "string"
-			},
-			{
-				"key": "client_authentication",
-				"value": "header",
-				"type": "string"
 			}
 		]
 	},
@@ -1118,7 +1118,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9aa5a3aa-9e36-47b8-9c9c-fa7bd2979e01",
+				"id": "317fc384-92a3-4ed0-bc62-17ef923f4adb",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1128,7 +1128,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c66aca99-5f34-4534-bf1c-b177ebd4a46c",
+				"id": "6bbeb30f-72f4-457b-8c34-6b92896d851a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1138,36 +1138,36 @@
 	],
 	"variable": [
 		{
-			"id": "2fe2a80c-badf-4c12-9b03-f7d492ac8699",
+			"id": "58977b8e-0fbd-45ab-83c5-b85744a909cc",
 			"key": "baseUrl",
 			"value": "https://api-prd.kpn.com/network/kpn/disturbance-check"
 		},
 		{
-			"id": "531c7b4f-7edb-40fe-afef-c811212f13d3",
+			"id": "2227be42-fb69-43bd-bbcd-03fd703605a1",
 			"key": "client_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "43caf1c5-b6ac-487c-87af-37b36d97e6bb",
+			"id": "80e5c399-ab33-47df-a581-a7460e337001",
 			"key": "client_secret",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "8e695454-c45e-40f1-95d0-47f6a2122272",
+			"id": "17f0db95-1a6a-44fe-814f-fec95c476b96",
 			"key": "zip_code",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "1563a86d-09f7-4f02-ac58-8b84b48abd7c",
+			"id": "89ff329c-2e38-47ec-8eb3-5af9131fff4a",
 			"key": "house_number",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "d07f6b5b-eeba-4ec6-adaa-8559bdc5b6fb",
+			"id": "221c7b09-3f7a-4022-939d-3ecc8e97a107",
 			"key": "house_number_extension",
 			"value": "",
 			"type": "string"
